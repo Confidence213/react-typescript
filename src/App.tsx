@@ -1,10 +1,9 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const App: React.FC = () => {
+  return null;
 }
 
 export default App;
