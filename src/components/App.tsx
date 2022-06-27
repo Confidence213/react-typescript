@@ -84,7 +84,7 @@ const App: React.FC = () => {
     }
   }
 
-  const { isLoading: isSearchingArticle, refetch: findArticlesByTitle } =
+  const { isLoading: isSearchingArticle, refetch: findArticleByTitle } =
     useQuery<IArticle[], Error>(
       "query-articles-by-title",
       async () => {
@@ -111,7 +111,7 @@ const App: React.FC = () => {
   function getDataByTitle() {
     if (title) {
       try {
-        findArticlesByTitle();
+        findArticleByTitle();
       } catch (error) {
         setResult(formatResponse(error));
       }

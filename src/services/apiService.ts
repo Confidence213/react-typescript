@@ -19,7 +19,7 @@ const findById = async (id: any) => {
 };
 
 const findByTitle = async (title: string) => {
-  const response = await apiService.get<IArticle[]>(`/articles?title=${title}`);
+  const response = await apiService.get<IArticle[]>(`/articles/title?title=${title}`);
   return response.data;
 };
 
