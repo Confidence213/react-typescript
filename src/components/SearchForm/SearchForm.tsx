@@ -125,54 +125,46 @@ const SearchForm: React.FC = () => {
   };
 
   return (
-    <div id="app" className="container">
-      <div className="card">
-        <div className="card-header">Find your article</div>
-        <div className="card-body">
-          <div className="input-group input-group-sm">
-            <button className="btn btn-sm btn-primary" onClick={getAllData}>
-              Get All
-            </button>
-            <input
-              type="text"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-              className="form-control ml-2"
-              placeholder="Id"
-            />
-            <div className="input-group-append">
-              <button className="btn btn-sm btn-primary" onClick={getDataById}>
-                Get By Id
-              </button>
-            </div>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="form-control ml-2"
-              placeholder="Title"
-            />
-            <div className="input-group-append">
-              <button
-                className="btn btn-sm btn-primary"
-                onClick={getDataByTitle}
-              >
-                Find By Title
-              </button>
-            </div>
-            <button
-              className="btn btn-sm btn-warning ml-2"
-              onClick={resetState}
-            >
-              Clear
+    <div className="card">
+      <div className="card-header">Find your article</div>
+      <div className="card-body">
+        <div className="input-group input-group-sm">
+          <button className="btn btn-sm btn-primary" onClick={getAllData}>
+            Get All
+          </button>
+          <input
+            type="text"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            className="form-control ml-2"
+            placeholder="Id"
+          />
+          <div className="input-group-append">
+            <button className="btn btn-sm btn-primary" onClick={getDataById}>
+              Get By Id
             </button>
           </div>
-          {result && (
-            <div className="alert alert-secondary mt-2" role="alert">
-              <pre>{result}</pre>
-            </div>
-          )}
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="form-control ml-2"
+            placeholder="Title"
+          />
+          <div className="input-group-append">
+            <button className="btn btn-sm btn-primary" onClick={getDataByTitle}>
+              Find By Title
+            </button>
+          </div>
+          <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>
+            Clear
+          </button>
         </div>
+        {result && (
+          <div className="alert alert-secondary mt-2" role="alert">
+            <pre>{result}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
