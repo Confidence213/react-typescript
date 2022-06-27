@@ -1,12 +1,13 @@
 import React from "react";
 
+import Container from "./Container";
 import SearchForm from "./SearchForm";
 
 const App: React.FC = () => {
   return (
-    <div id="app" className="container">
+    <Container>
       <SearchForm />
-    </div>
+    </Container>
   );
 };
 
