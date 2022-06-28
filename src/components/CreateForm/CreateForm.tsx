@@ -5,7 +5,7 @@ import articleService from "../../services/apiService";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ArticleForm: React.FC = () => {
+const CreateForm: React.FC = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [result, setResult] = useState<string | null>(null);
@@ -90,4 +90,4 @@ const ArticleForm: React.FC = () => {
   );
 };
 
-export default ArticleForm;
+export default CreateForm;

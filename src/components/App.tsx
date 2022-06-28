@@ -2,13 +2,13 @@ import React from "react";
 
 import Container from "./Container";
 import SearchForm from "./SearchForm";
-import ArticleForm from "./ArticleForm";
+import CreateForm from "./CreateForm";
 
 const App: React.FC = () => {
   return (
     <Container>
       <SearchForm />
-      <ArticleForm />
+      <CreateForm />
     </Container>
   );
 };
