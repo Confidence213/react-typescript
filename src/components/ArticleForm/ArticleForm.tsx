@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "react-query";
 
-import IArticle from "../../types/Article";
 import articleService from "../../services/apiService";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -35,6 +34,18 @@ const ArticleForm: React.FC = () => {
     }
   );
 
+  useEffect(() => {
+    if (isPostingArticle) setResult("Posting...");
+  }, [isPostingArticle]);
+
+  function postData() {
+    try {
+      postArticle();
+    } catch (err) {
+      setResult(formatResponse(err));
+    }
+  }
+
   const resetState = () => {
     setTitle("");
     setDescription("");
@@ -43,7 +54,7 @@ const ArticleForm: React.FC = () => {
 
   return (
     <div className="card">
-      <div className="card-header">Create a new article</div>
+      <div className="card-header">Create your article</div>
       <div className="card-body">
         <div className="form-group">
           <input
@@ -63,13 +74,17 @@ const ArticleForm: React.FC = () => {
             placeholder="Description"
           />
         </div>
-        <button className="btn btn-sm btn-primary">Post Data</button>
+        <button className="btn btn-sm btn-primary" onClick={postData}>
+          Post Data
+        </button>
         <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>
           Clear
         </button>
-        <div className="alert alert-secondary mt-2" role="alert">
-          <pre>Result</pre>
-        </div>
+        {result && (
+          <div className="alert alert-secondary mt-2" role="alert">
+            <pre>{result}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
