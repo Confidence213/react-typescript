@@ -11,6 +11,30 @@ const ArticleForm: React.FC = () => {
   const [description, setDescription] = useState("");
   const [result, setResult] = useState<string | null>(null);
 
+  const formatResponse = (res: any) => {
+    return JSON.stringify(res, null, 2);
+  };
+
+  const { isLoading: isPostingArticle, mutate: postArticle } = useMutation<
+    any,
+    Error
+  >(
+    async () => {
+      return await articleService.create({
+        title: title,
+        description: description,
+      });
+    },
+    {
+      onSuccess: (res) => {
+        setResult(formatResponse(res));
+      },
+      onError: (error: any) => {
+        setResult(formatResponse(error.response?.data || error));
+      },
+    }
+  );
+
   const resetState = () => {
     setTitle("");
     setDescription("");
