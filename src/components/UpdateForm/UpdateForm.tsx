@@ -12,6 +12,31 @@ const UpdateForm: React.FC = () => {
   const [published, setPublished] = useState(false);
   const [result, setResult] = useState<string | null>(null);
 
+  const formatResponse = (res: any) => {
+    return JSON.stringify(res, null, 2);
+  };
+
+  const { isLoading: isUpdatingArticle, mutate: updateArticle } = useMutation<
+    any,
+    Error
+  >(
+    async () => {
+      return await articleService.update(id, {
+        title: title,
+        description: description,
+        published: published,
+      });
+    },
+    {
+      onSuccess: (res) => {
+        setResult(formatResponse(res));
+      },
+      onError: (err: any) => {
+        setResult(formatResponse(err.response?.data || err));
+      },
+    }
+  );
+
   return (
     <div className="card">
       <div className="card-header">Update your article</div>
