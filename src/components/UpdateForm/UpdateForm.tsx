@@ -51,6 +51,14 @@ const UpdateForm: React.FC = () => {
     }
   }
 
+  const resetState = () => {
+    setId("");
+    setTitle("");
+    setDescription("");
+    setPublished(false);
+    setResult("");
+  };
+
   return (
     <div className="card">
       <div className="card-header">Update your article</div>
@@ -97,7 +105,7 @@ const UpdateForm: React.FC = () => {
         <button className="btn btn-sm btn-primary" onClick={updateData}>
           Update Data
         </button>
-        <button className="btn btn-sm btn-warning ml-2">Clear</button>
+        <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>Clear</button>
         <div className="alert alert-secondary mt-2" role="alert">
           {result && (
             <div className="alert alert-secondary mt-2" role="alert">
