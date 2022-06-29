@@ -21,7 +21,7 @@ const UpdateForm: React.FC = () => {
     Error
   >(
     async () => {
-      return await articleService.update(id, {
+      return await articleService.updateById(id, {
         title: title,
         description: description,
         published: published,

@@ -31,7 +31,7 @@ const create = async ({ title, description }: IArticle) => {
   return response.data;
 };
 
-const update = async (id: any, { title, description, published }: IArticle) => {
+const updateById = async (id: any, { title, description, published }: IArticle) => {
   const response = await apiService.put<any>(`/articles/${id}`, {
     title,
     description,
@@ -55,7 +55,7 @@ const articleService = {
   findById,
   findByTitle,
   create,
-  update,
+  updateById,
   deleteById,
   deleteAll,
 };
