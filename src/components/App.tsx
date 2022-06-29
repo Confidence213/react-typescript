@@ -4,6 +4,7 @@ import Container from "./Container";
 import SearchForm from "./SearchForm";
 import CreateForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
+import DeleteForm from "./DeleteForm";
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
       <SearchForm />
       <CreateForm />
       <UpdateForm />
+      <DeleteForm />
     </Container>
   );
 };
