@@ -105,14 +105,14 @@ const UpdateForm: React.FC = () => {
         <button className="btn btn-sm btn-primary" onClick={updateData}>
           Update Data
         </button>
-        <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>Clear</button>
-        <div className="alert alert-secondary mt-2" role="alert">
-          {result && (
-            <div className="alert alert-secondary mt-2" role="alert">
-              <pre>{result}</pre>
-            </div>
-          )}
-        </div>
+        <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>
+          Clear
+        </button>
+        {result && (
+          <div className="alert alert-secondary mt-2" role="alert">
+            <pre>{result}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
