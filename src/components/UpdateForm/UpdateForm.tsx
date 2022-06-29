@@ -37,6 +37,20 @@ const UpdateForm: React.FC = () => {
     }
   );
 
+  useEffect(() => {
+    if (isUpdatingArticle) setResult("Updating...");
+  }, [isUpdatingArticle]);
+
+  function updateData() {
+    if (id) {
+      try {
+        updateArticle();
+      } catch (error) {
+        setResult(formatResponse(error));
+      }
+    }
+  }
+
   return (
     <div className="card">
       <div className="card-header">Update your article</div>
@@ -80,10 +94,16 @@ const UpdateForm: React.FC = () => {
             Publish
           </label>
         </div>
-        <button className="btn btn-sm btn-primary">Update Data</button>
+        <button className="btn btn-sm btn-primary" onClick={updateData}>
+          Update Data
+        </button>
         <button className="btn btn-sm btn-warning ml-2">Clear</button>
         <div className="alert alert-secondary mt-2" role="alert">
-          <pre>Result</pre>
+          {result && (
+            <div className="alert alert-secondary mt-2" role="alert">
+              <pre>{result}</pre>
+            </div>
+          )}
         </div>
       </div>
     </div>
