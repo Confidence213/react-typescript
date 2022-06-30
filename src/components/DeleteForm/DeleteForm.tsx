@@ -7,6 +7,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const DeleteForm: React.FC = () => {
   const [id, setId] = useState("");
+  const [result, setResult] = useState<string | null>(null);
+
+  const formatResponse = (res: any) => {
+    return JSON.stringify(res, null, 2);
+  };
+
+  const { isLoading: isDeletingArticles, mutate: deleteAllArticles } =
+    useMutation<any, Error>(
+      async () => {
+        return await articleService.deleteAll();
+      },
+      {
+        onSuccess: (res) => {
+          setResult(formatResponse(res));
+        },
+        onError: (error: any) => {
+          setResult(formatResponse(error.response?.data || error));
+        },
+      }
+    );
 
   return (
     <div className="card">
