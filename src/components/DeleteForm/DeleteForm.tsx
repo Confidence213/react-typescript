@@ -28,12 +28,24 @@ const DeleteForm: React.FC = () => {
       }
     );
 
+  useEffect(() => {
+    if (isDeletingArticles) setResult("Deleting...");
+  }, [isDeletingArticles]);
+
+  function deleteAllData() {
+    try {
+      deleteAllArticles();
+    } catch (error) {
+      setResult(formatResponse(error));
+    }
+  }
+
   return (
     <div className="card">
       <div className="card-header">Delete your article</div>
       <div className="card-body">
         <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-danger">Delete All</button>
+          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>Delete All</button>
           <input
             type="text"
             value={id}
