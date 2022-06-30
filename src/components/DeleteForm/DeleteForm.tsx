@@ -71,6 +71,11 @@ const DeleteForm: React.FC = () => {
     }
   }
 
+  const resetState = () => {
+    setId("");
+    setResult("");
+  };
+
   return (
     <div className="card">
       <div className="card-header">Delete your article</div>
@@ -87,13 +92,19 @@ const DeleteForm: React.FC = () => {
             placeholder="Id"
           />
           <div className="input-group-append">
-            <button className="btn btn-sm btn-danger" onClick={deleteDataById}>Delete By Id</button>
+            <button className="btn btn-sm btn-danger" onClick={deleteDataById}>
+              Delete By Id
+            </button>
           </div>
-          <button className="btn btn-sm btn-warning ml-2">Clear</button>
+          <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>
+            Clear
+          </button>
         </div>
-        <div className="alert alert-secondary mt-2" role="alert">
-          <pre>Result</pre>
-        </div>
+        {result && (
+          <div className="alert alert-secondary mt-2" role="alert">
+            <pre>{result}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
