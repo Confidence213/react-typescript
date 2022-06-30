@@ -81,7 +81,7 @@ const DeleteForm: React.FC = () => {
       <div className="card-header">Delete your article</div>
       <div className="card-body">
         <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>
+          <button className="btn btn-sm btn-danger me-1" onClick={deleteAllData}>
             Delete All
           </button>
           <input
@@ -91,7 +91,7 @@ const DeleteForm: React.FC = () => {
             className="form-control ml-2"
             placeholder="Id"
           />
-          <div className="input-group-append">
+          <div className="input-group-append me-1">
             <button className="btn btn-sm btn-danger" onClick={deleteDataById}>
               Delete By Id
             </button>

@@ -129,7 +129,7 @@ const SearchForm: React.FC = () => {
       <div className="card-header">Find your article</div>
       <div className="card-body">
         <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-primary" onClick={getAllData}>
+          <button className="btn btn-sm btn-primary me-1" onClick={getAllData}>
             Get All
           </button>
           <input
@@ -139,7 +139,7 @@ const SearchForm: React.FC = () => {
             className="form-control ml-2"
             placeholder="Id"
           />
-          <div className="input-group-append">
+          <div className="input-group-append me-1">
             <button className="btn btn-sm btn-primary" onClick={getDataById}>
               Get By Id
             </button>
@@ -151,7 +151,7 @@ const SearchForm: React.FC = () => {
             className="form-control ml-2"
             placeholder="Title"
           />
-          <div className="input-group-append">
+          <div className="input-group-append me-1">
             <button className="btn btn-sm btn-primary" onClick={getDataByTitle}>
               Find By Title
             </button>

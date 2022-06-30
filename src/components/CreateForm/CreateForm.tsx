@@ -56,7 +56,7 @@ const CreateForm: React.FC = () => {
     <div className="card">
       <div className="card-header">Create your article</div>
       <div className="card-body">
-        <div className="form-group">
+        <div className="form-group mb-2">
           <input
             type="text"
             className="form-control"
@@ -65,7 +65,7 @@ const CreateForm: React.FC = () => {
             placeholder="Title"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mb-2">
           <input
             type="text"
             className="form-control"
@@ -74,7 +74,7 @@ const CreateForm: React.FC = () => {
             placeholder="Description"
           />
         </div>
-        <button className="btn btn-sm btn-primary" onClick={postData}>
+        <button className="btn btn-sm btn-primary me-1" onClick={postData}>
           Post Data
         </button>
         <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>

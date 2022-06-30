@@ -63,7 +63,7 @@ const UpdateForm: React.FC = () => {
     <div className="card">
       <div className="card-header">Update your article</div>
       <div className="card-body">
-        <div className="form-group">
+        <div className="form-group mb-2">
           <input
             type="text"
             value={id}
@@ -72,7 +72,7 @@ const UpdateForm: React.FC = () => {
             placeholder="Id"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mb-2">
           <input
             type="text"
             value={title}
@@ -81,7 +81,7 @@ const UpdateForm: React.FC = () => {
             placeholder="Title"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mb-2">
           <input
             type="text"
             value={description}
@@ -102,7 +102,7 @@ const UpdateForm: React.FC = () => {
             Publish
           </label>
         </div>
-        <button className="btn btn-sm btn-primary" onClick={updateData}>
+        <button className="btn btn-sm btn-primary me-1" onClick={updateData}>
           Update Data
         </button>
         <button className="btn btn-sm btn-warning ml-2" onClick={resetState}>
