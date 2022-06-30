@@ -40,12 +40,31 @@ const DeleteForm: React.FC = () => {
     }
   }
 
+  const { isLoading: isDeletingArticle, mutate: deleteArticle } = useMutation<
+    any,
+    Error
+  >(
+    async () => {
+      return await articleService.deleteById(id);
+    },
+    {
+      onSuccess: (res) => {
+        setResult(formatResponse(res));
+      },
+      onError: (error: any) => {
+        setResult(formatResponse(error.response?.data || error));
+      },
+    }
+  );
+
   return (
     <div className="card">
       <div className="card-header">Delete your article</div>
       <div className="card-body">
         <div className="input-group input-group-sm">
-          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>Delete All</button>
+          <button className="btn btn-sm btn-danger" onClick={deleteAllData}>
+            Delete All
+          </button>
           <input
             type="text"
             value={id}
