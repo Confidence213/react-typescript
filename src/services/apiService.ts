@@ -2,7 +2,7 @@ import axios from "axios";
 import IArticle from "../types/Article";
 
 const apiService = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: "https://node-typescript-project.herokuapp.com/api",
   headers: {
     "Content-type": "application/json",
   },
